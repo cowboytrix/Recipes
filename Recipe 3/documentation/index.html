@@ -1,0 +1,275 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>iOS Recipe App Documentation</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/css/custom.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;iOS Recipe App&rdquo; Documentation by &ldquo;dmb TEAM&rdquo; v1.3</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo; iOS Recipe App &rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 30.03.2015<br>
+					Updated: 03.04.2016<br>
+					By: dmb TEAM<br>					
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing our iOS application. If you have any questions that are beyond the scope of this help file, please feel free to email us via our Profile Page <a href="http://codecanyon.net/user/dmbTeam">here</a>. Please always contact us via that contact form. Thanks!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr />
+		
+        <div style="background-color: #ffd0d0; padding: 10px; margin-bottom: 20px;">
+			<h2>Important</h2>
+
+				<strong>What stays behind Support:</strong>
+				<ul>
+					<li>Responding to questions or problems regarding the item and its features</li>
+					<li>Fixing bugs and reported issues</li>
+				</ul>
+				<strong>What is OUT of the Support scope:</strong>
+				<ul>
+					<li>Customization and installation services</li>
+					<li>Support for third party software and plug-ins</li>
+				</ul>
+
+		</div>
+        
+        <hr />
+        
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<h3>I. How to open the project and prepare it for customization</h3>
+		<ol>
+			<li><a href="#tools">Needed tools</a></li>
+			<li><a href="#start">Start customizing</a></li>
+			
+		</ol>
+		<h3>II. How to Customize "iOS Recipe App"</h3>
+		<ol>
+			<li><a href="#recipes">Recipes (Adding Categories and Recipes)</a></li>
+			<li><a href="#splash">Splash Screen</a></li>
+			<li><a href="#admob">Monetize: AdMob Ads</a></li>
+			<li><a href="#aboutPage">About Page setup</a></li>
+			<li><a href="#appicon">Application Icon</a></li>
+			<li><a href="#push">Push Notifications</a></li>
+			<li><a href="#faqs">FAQs</a></li>
+		</ol>
+		
+		<hr />
+		
+		<h3>I. How to open the project and prepare it for customization</h3>
+		<h3 id="tools"><strong>1. Needed tools</strong> - <a href="#toc">top</a></h3>
+		<p>In order to successfully open and customize the product you need xCode 7.2:</p>
+		<p>
+			<img width="800" src="assets/images/xcode.png" alt="xCode 7.0" />
+		</p>
+		<h3 id="start"><strong>2. Start customizing</strong> - <a href="#toc">top</a></h3>
+		<p>
+			When you are ready with the installation of xCode 7.2, just extract the content of the .zip file that you get from CodeCanyon (e.g. dmbteam_ios_joke_app_v1.1.zip) and double click on the <strong>Recipe.xcodeproj</strong> file. This way you will open the product with xCode.
+		</p>
+		<p>
+			<img src="assets/images/xcodeproj.png" alt=".xcodeproj file" />
+		</p>
+		<p>
+			When xCode is opened here is the screen which you will get:
+		</p>
+		<p>
+			<img src="assets/images/project-structure.png" alt="Project Structure" />
+		</p>
+		<p>If you can't see the Project's Structure on the left, make sure that you have clicked the folder icon, which will switch to the correct perspective (see the fitst red rectangular on the image above). Basically there two important files, that you will dealing with:			
+		</p>
+		<ul>
+			<li><strong>recipes_settings.xml</strong> -- holding all of your recipes</li>
+			<li><strong>Constants.swift</strong> -- Enable/Disable ads, Facebook URL, Twitter URL, AppStore URL, Using External (web hosted) .xml file</li>
+		</ul>
+		
+		<hr />
+		
+		<h3>II. How to Customize "iOS Recipe App"</h3>
+		<h3 id="recipes"><strong>1. Recipes (Adding Categories and Recipes)</strong> - <a href="#toc">top</a></h3>
+		<p>
+		First of all you should decide whether you will use a local .xml file (within Supporting Files folder) for your recipes or you want to use
+		external .xml file (web hosted on a web server). 
+		</p>
+		<p>By default the app uses local .xml file and you just need to add your recipes to <strong>recipes_settings.xml</strong> file within the <em>Supporting Files</em> directory.
+		</p>
+		<p><strong>1.1. External .xml file (Web Hosted): </strong> If you want to use web hosted .xml file (uploaded on a web server), you have to set up the project to do so. For that purpose open (double click) the <strong>Constants.swift</strong> file and look for the <strong>RemoteXMLUrl</strong> constant. You should add, as vallue, the path (web url) to your .xml file, like in the example below: 
+		</p>
+		<p>
+			<img src="assets/images/remote-xml.png" alt="Remote xml" />
+		</p>
+		
+		<p>
+            As you can see now it is set to use our test .xml file. So you have to replace the URL <em>http://dmb-team.com/apps/recipe/recipes_settings.xml</em> with yours.
+		</p>
+		<hr>
+		<p>
+		    <strong>1.2. Local .xml file (within Supporting Files folder): </strong>If you want to use a local .xml file you should leave the <strong>RemoteXMLUrl</strong> constant empty (with no value), like this:		    
+		</p>
+		<p>
+            <img src="assets/images/local-xml.png" alt="Local xml" />
+		</p>
+		
+		<hr>
+		
+		<p><strong>1.3. How to Edit the .XML file (applies for both local and external): </strong></p>
+        <p>If you are using the local .xml file you can edit it directly within xCode. If you want to use external .xml file, just copy the local one and paste it on your desktop. After that open it via text editor program (Notepad++ or similar) and apply the needed changes. When you are ready you should upload that .xml file to your web server. Please note that you should point the path to the xml file within the constant described above.</p>
+        <p>To add <strong>Recipes</strong>, do the following:</p>
+		<ol>
+			<li>Replace the contents of recipes_settings.xml (it is located in the Supporting Files folder) with your own.</li>
+			<img width="1024" src="assets/images/recipe_xml.png">
+			<br/><br/>
+			<h4><strong>Elements description:</strong></h4>
+			
+			<strong>Section &lt;MainSettings&gt; </strong><br/>			
+			<em>&rarr; <strong>Sub Element &lt;LogoActive'</strong></em> - name of the image to be displayed as active logo in the left menu<br/>
+			<em>&rarr; Sub Element &lt;LogoInactive'</em> - name of the image to be displayed as active logo in the left menu<br/>
+			<br/>
+			<strong>Section &lt;Category&gt;</strong> - it has two attributes<br/>
+			<em>- attribute 'name'</em> - name of the Category<br/>
+			<em>- attribute 'icon'</em> - icon of the Category<br/>
+			<br/>
+			<em>&rarr; <strong>Sub-Section &lt;RecipeInfo&gt;</strong></em> - represents a single recipe and the info about it. It has <strong>ID</strong> attribute, which MUST be unique. So each of the recipes you are about to add, MUST HAVE unique IDs.<br/>
+			<br/>
+			<em>-- &rarr; <strong>Element &lt;RecipeTitle&gt;</strong></em> - put the name of the meal here<br/>
+			<em>-- &rarr; <strong>Sub-2x-Section &lt;RecipePictureList &gt;</strong></em> - represent the pictures for the recipe.<br/>
+			<em>-- -- &rarr; <strong>Element &lt;RecipePicture&gt;</strong></em> - each picture is stored within such element. If you want to have several images, you have to create several <strong>RecipePicture</strong> elements within <strong>RecipePictureList</strong>. Make sure all of your images to be .png and skip the .png file extension when you are setting the value within this element. For example if your image file is <strong>my-image-file.png</strong>, you have to put here only <strong>my-image-file</strong>. Of course that applies only for the <strong>INTERNAL XML file</strong>. When you are about to use <strong>EXTERNAL</strong>. There you have to place the URL of the image.<br/>
+			<br/>
+			<em>-- &rarr; <strong>Sub-2x-Section &lt;RecipeSummary&gt;</strong></em> - summary of the recipe; contains the following:<br/>
+			<em>-- -- &rarr; <strong>Element &lt;RecipeSummaryOrigin&gt;</strong></em> - origin of the recipe<br/>
+			<em>-- -- &rarr; <strong>Element &lt;RecipeSummaryPreparationTime&gt;</strong></em> - preparation time of the meal<br/>
+			<em>-- -- &rarr; <strong>Element &lt;RecipeSummaryCookingTime&gt;</strong></em> - cooking time of the meal<br/>
+			<em>-- -- &rarr; <strong>Element &lt;RecipeSummaryPortions&gt;</strong></em> - portions of the meal<br/>
+			<em>-- -- &rarr; <strong>Element &lt;RecipeSummaryCalories&gt;</strong></em> - calories of the meal<br/>
+			<em>-- -- &rarr; <strong>Element &lt;RecipeSummaryDescription&gt;</strong></em> - description of the meal<br/>
+			<br/>
+			<em>-- &rarr; <strong>Sub-2x-Section &lt;RecipeIngredientsList&gt;</strong></em> - list of recipe ingredients<br/>
+			<em>-- -- &rarr; <strong>Sub-3x-Section &lt;RecipeIngredient&gt;</strong></em> - represents a recipe ingredient. Add such item for each of the ingredients.<br/>
+			<em>-- -- -- &rarr; <strong>Element &lt;RecipeIngredientsName&gt;</strong></em> - name of the ingredient<br/>
+			<em>-- -- -- &rarr; <strong>Element &lt;RecipeIngredientsQuantity&gt;</strong></em> - quantity of the ingredient<br/>
+			<br/>
+			<em>-- &rarr; <strong>Sub-2x-Section &lt;RecipeStepsList&gt;</strong></em> - list of recipe steps<br/>
+			<em>-- -- &rarr; <strong>Sub-3x-Section &lt;RecipeStep&gt;</strong></em> - represents a step to make the recipe. Add such item for each of the steps.<br/>
+			<em>-- -- -- &rarr; <strong>Element &lt;RecipeStepName&gt;</strong></em> - name of the recipe step<br/>
+            <em>-- -- -- &rarr; <strong>Element &lt;RecipeStepDescription&gt; </strong></em> - description of the recipe step<br/>
+            <em>-- -- -- &rarr; <strong>Element &lt;RecipeStepImage&gt; </strong></em> - you can add an image to each step. The value of element should be the name of the image file located in the assets. If you are using a external (web hosted) XML file, you can place as value the URL of the image.<br/>
+            <em>-- -- -- &rarr; <strong>Element &lt;RecipeStepVideo&gt; </strong></em> - you can add a video to each step. The value of element should be the youtube URL. Example: https://www.youtube.com/watch?v=Rwjk6zmjP70<br/>
+			<br/>
+		</ol>
+        <p><mark>Please note that you can have either an image or a video integrated into a step - you can't have both of them.</mark></p>
+		<p>
+			You can always use our test .xml file as template. It contains 7 categories: Main Courses, Appetizers, Soups, Vegetarion, Deserts, Time-Savers and Other. Plus, we have added a lot of comments within the .xml file to be easier for you to edit it.
+		</p>
+		
+		<h3 id="splash"><strong>2. Splash Screen</strong> - <a href="#toc">top</a></h3>
+		
+		<p>To customize the <strong>Splash Screen</strong> do the following:</p>
+		<ol>
+			<li>
+				From the left panel of xCode click on <strong>Images.xcassets</strong>, then find the <strong>LaunchImage</strong> item and replace the four images that you see on the right. Please make sure to replace the images with the exact same size. To see the size of each image just right click on each of them and select <em>Show in Finder</em>. There you will see the different sizes that you should provide. It's good idea to preserve the image file names too.	<br/><br/>
+				<p>
+					<img src="assets/images/launch-image.png" alt="Launch Image" >
+				</p>
+				<p>Finder view: As you can see you have 4 different images for the different iPhone's resolutions.</p>
+				<p>
+					<img src="assets/images/show-finder.png" alt="Launch Image" >
+				</p>
+			</li>
+		</ol>
+		
+		<h3 id="admob"><strong>3. Monetize: AdMob Ads</strong> - <a href="#toc">top</a></h3>
+		
+		<p>The product has integration with AdMob and by default the ads are enabled. You can control the showing of the ads from the <strong>
+			let EnableAds</strong> constant, within <strong>AppConstants.swift</strong> file.<br/><br/>
+			<img src="assets/images/iad.png">
+		</p>
+        <p>In addition, there are two main steps in order to use Ads in the app. The first one is to register an account <a href="https://www.google.com/admob/">HERE</a>. Then, you have to copy your AdMob ID to <strong>AppConstants.swift</strong> file located within the <strong>Supporting Files</strong> directory:</p>
+		
+		<hr />
+		
+		<h3 id="aboutPage"><strong>4. About Page Setup</strong> - <a href="#toc">top</a></h3>
+		<p>The product has simple About page, which is accessible from the Left Menu: </p>
+		<p>
+			<img src="assets/images/about-1.png" style="border: 2px solid green;" width="300" alt="About Page 1" />
+			<img src="assets/images/about-2.png" style="border: 2px solid green;" width="300" alt="About Page 2" />
+		</p>
+		<p>
+			<strong>a)</strong> To setup the content of the About Page, open the <strong>Main.storyboard</strong> file and click on the <strong>About View Controller Scene.</strong> Inside it, expand the <strong>About View Controller</strong>, then the <strong>View</strong> item and you will see all of the elements: <br>
+			<img src="assets/images/about-setup.png" width="800" alt="About Setup">
+		</p>
+		<p>
+			First 4 items are TextViews and you have to change the value from the right panel.
+		</p>
+		<p>
+			Then you have two ImageView items: one for Facebook and one for Twitter. When you click on each of them, from the right panel you can change the image if you don't like the default ones.
+		</p>
+		<p>
+			<img src="assets/images/about-setup-2.png" width="800" alt="About Setup" />
+		</p>
+		<p>
+			And last but not least, to finish the customization of the About page, open <strong>Constants.swift</strong> file and change the default links of the Facebook and Twitter:
+		</p>
+		<p>
+			<img src="assets/images/about-setup-3.png" alt="About Setup" />
+		</p>
+		
+		<hr />
+		
+		<h3 id="appicon"><strong>5. Application Icon</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			From the left panel of xCode click on <strong>Images.xcassets</strong>, then find the <strong>AppIcon</strong> item and replace the four images that you see on the right. Please make sure to replace the images with the exact same size. To see the size of each image just right click on each of them and select <em>Show in Finder</em>. There you will see the different sizes that you should provide. It's good idea to preserve the image file names too.	<br/><br/>
+		</p>
+		<p>
+			<img src="assets/images/appicon.png" width="800" alt="Application Icon" />
+		</p>
+		
+		<hr />
+		
+        <h3 id="push"><strong>6. Push Notifications</strong> - <a href="#toc">top</a></h3>
+        <p>iOS Recipe App is integrated with OneSignal service when it comes to Push Notifications. This way, you will be able to send over targeted notifications to your users tha have installed the app. The process is not that simple, that's why we've prepared a video tutorial - we believe this is the best way to get it right and quick.</p>
+        <p>
+			<iframe width="420" height="315" src="https://www.youtube.com/embed/pmJ6xSntZjo" frameborder="0" allowfullscreen=""></iframe>
+		</p>
+        <p>
+            <a href="https://youtu.be/pmJ6xSntZjo" class="btn btn-green" target="_blank">Open in Youtube</a>
+            <a href="https://documentation.onesignal.com/docs/generating-an-ios-push-certificate" class="btn btn-grey" target="_blank">OneSignal Documentation</a>
+        </p>
+        
+        <hr />
+        
+		<h3 id="faqs"><strong>7. FAQs</strong> - <a href="#toc">top</a></h3>
+		<p>You can always check the product's Support Tab section (at CodeCanyon.net), where you can find a lot of already answered questions and solved issues. Plus, you can benefit from the Comments section (at CodeCanyon.net), where we've replied to a lot of questions.</p>
+
+		<hr />
+		
+		<p class="append-bottom alt large"><strong>"iOS Recipe App" by dmb TEAM</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>
